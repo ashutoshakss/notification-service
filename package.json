@@ -1,0 +1,37 @@
+{
+  "name": "notification-service",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "NODE_ENV=development bun run --watch src/index.ts",
+    "start": "NODE_ENV=production bun run src/index.ts",
+    "setup-db:dev": "NODE_ENV=development bun run src/scripts/setup-db.ts",
+    "setup-db:prod": "NODE_ENV=production bun run src/scripts/setup-db.ts",
+    "test": "NODE_ENV=test bun test",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "create-admin:dev": "NODE_ENV=development bun run src/scripts/create-admin.ts",
+    "create-admin:prod": "NODE_ENV=production bun run src/scripts/create-admin.ts"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "latest",
+    "@elysiajs/swagger": "latest",
+    "@sendgrid/mail": "^8.1.4",
+    "dotenv": "latest",
+    "elysia": "latest",
+    "firebase-admin": "latest",
+    "mongodb": "latest",
+    "node-apn": "latest",
+    "nodemailer": "latest",
+    "postgres": "latest",
+    "redis": "latest",
+    "twilio": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "@types/node": "latest",
+    "typescript": "latest",
+    "eslint": "latest",
+    "prettier": "latest"
+  }
+}

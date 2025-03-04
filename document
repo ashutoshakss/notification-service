@@ -1,0 +1,173 @@
+# Unified Notification Service - Development Prompt
+
+Create a scalable notification service with the following components and features:
+
+## 1. Core Services Structure
+Create separate microservices for:
+- Device Management Service
+- Template Management Service
+- Campaign Service
+- Notification Dispatcher Service
+- Analytics Service
+- User Preference Service
+
+## 2. Database Schemas Required
+
+### Device Management
+- Device registration
+- Token storage
+- Online/offline status
+- User association
+- Device metadata
+
+### User Preferences
+- Communication preferences
+- Channel opt-ins
+- DND settings
+- Contact information
+
+### Templates
+- Multi-channel templates
+- Template versions
+- Localization data
+- Approval status
+
+### Campaigns
+- Campaign definitions
+- Target segments
+- Schedule information
+- Performance metrics
+
+### Message Logs
+- Delivery status
+- User engagement
+- Error logs
+- Analytics data
+
+## 3. API Endpoints to Implement
+
+### Device Management APIs
+    POST /api/v1/devices/register
+    PUT /api/v1/devices/update-token
+    PUT /api/v1/devices/status
+    GET /api/v1/devices/user/{userId}
+    DELETE /api/v1/devices/{deviceId}
+
+### Template Management APIs
+    POST /api/v1/templates
+    PUT /api/v1/templates/{templateId}
+    GET /api/v1/templates
+    POST /api/v1/templates/{templateId}/versions
+    PUT /api/v1/templates/{templateId}/status
+
+### Campaign APIs
+    POST /api/v1/campaigns
+    GET /api/v1/campaigns
+    PUT /api/v1/campaigns/{campaignId}
+    POST /api/v1/campaigns/{campaignId}/schedule
+    GET /api/v1/campaigns/{campaignId}/analytics
+
+### Notification APIs
+    POST /api/v1/notifications/send
+    POST /api/v1/notifications/batch
+    GET /api/v1/notifications/status/{notificationId}
+
+## 4. Required Features by Service
+
+### Device Management Service
+- Device registration with metadata
+- Token management (FCM, APNS, Web Push)
+- Online/offline tracking
+- User-device association
+- Device grouping
+- Activity logging
+
+### Template Service
+- Multi-channel template management
+- Version control
+- Localization
+- Variable substitution
+- Rich media support
+- Template approval workflow
+
+### Campaign Service
+- Campaign creation and management
+- Audience segmentation
+- Scheduling
+- A/B testing
+- Analytics integration
+- Cost tracking
+
+### Notification Dispatcher Service
+Support for:
+- Push notifications (iOS/Android)
+- SMS
+- Email
+- WhatsApp
+- In-app notifications
+- VOIP calls
+- Web push
+
+### Analytics Service
+- Delivery tracking
+- Engagement metrics
+- Cost analysis
+- Performance monitoring
+- Custom report generation
+- Real-time analytics
+
+## 5. Technical Requirements
+
+### Scalability
+- Horizontal scaling
+- Message queuing
+- Load balancing
+- Database sharding
+
+### Security
+- End-to-end encryption
+- Authentication
+- Authorization
+- Rate limiting
+- Input validation
+
+### Monitoring
+- Health checks
+- Performance metrics
+- Error tracking
+- Cost monitoring
+- Usage analytics
+
+### High Availability
+- Failover support
+- Multiple provider support
+- Retry mechanisms
+- Circuit breakers
+
+## 6. Implementation Steps
+
+1. Create base service structure
+2. Implement database schemas
+3. Create core APIs
+4. Implement notification dispatchers
+5. Add template management
+6. Implement campaign management
+7. Add analytics and monitoring
+8. Implement security features
+
+Please implement this service using:
+- TypeScript/Node.js
+- PostgreSQL for primary database
+- Redis for caching
+- MongoDB for logs and analytics
+- RabbitMQ/Kafka for message queuing
+- Docker for containerization
+- Kubernetes for orchestration
+
+Generate code for each component, ensuring:
+- Clean architecture principles
+- Proper error handling
+- Comprehensive logging
+- Unit test coverage
+- API documentation
+- Type safety
